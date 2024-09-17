@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB Checking</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="image/1.png">
+</head>
+<body>
+    <header>
+        <h1>PCB Checking</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Homepage</a></li>
+                <li><a href="#">User Guide</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <button>Sign up</button>
+                <button>Log in</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Choose resource for detecting</h2>
+        <div class="resource-options">
+            <button id="cameraBtn">
+                <img src="image/camera-icon-png-8.jpg" alt="">
+                Camera
+            </button>
+            <button id="imageBtn">
+                <img src="image/1297930.png" alt="">
+                Image
+            </button>
+        </div>
+
+        <!-- File upload input for image detection -->
+        <div id="uploadSection" style="display: none;">
+            <h3>Upload an image from your device</h3>
+            <input type="file" id="fileInput" accept="image/*">
+            <div id="imagePreview" style="margin-top: 10px;">
+                <!-- The uploaded image will be shown here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Section for webcam page after clicking the camera button -->
+    <section id="webcam-section" style="display:none;">
+        <h2>Detecting...</h2>
+        <div class="video">
+            <video width="1600" height="480" autoplay></video>
+        </div>
+        <div id="action-buttons">
+            <button id="saveBtn">Save</button>
+            <button id="continueBtn">Continue</button>
+            <button id="stopBtn">Stop</button>
+        </div>
+    </section>
+
+
+
+    
+    <!-- Linking to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
