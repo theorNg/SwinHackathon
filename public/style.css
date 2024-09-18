@@ -222,14 +222,14 @@ h2 {
   transition: transform 0.2s ease;
 }
 
-#changeImageBtn {
+.buttons {
   display: flex;
   justify-content: center;
   margin-top: 20px;
   margin-right: 5%;
 }
 
-#changeImageBtn button {
+.buttons button {
   margin-left: 20px;
   background-color: white;
   border: none;
@@ -238,8 +238,20 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   border-radius: 15px;
-  width: 150px;
+  width: 200px;
   height: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s ease;
+}
+
+#imagePreview {
+  margin-top: -30px;
+}
+
+.buttons button#stopBtnImg{
+  background-color: #ff6b6b; /* Red color for the stop button */
+}
+
+.buttons button#stopBtnImg:hover {
+  background-color: #ff8787;
 }

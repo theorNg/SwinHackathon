@@ -33,7 +33,7 @@
                 <img src="image/camera-icon-png-8.jpg" alt="">
                 Camera
             </button>
-            <button id="imageBtn">
+            <button id="uploadImageBtn">
                 <img src="image/1297930.png" alt="">
                 Image
             </button>
@@ -43,10 +43,23 @@
         <div id="uploadSection" style="display: none;">
             <h3>Upload an image from your device</h3>
             <input type="file" id="fileInput" accept="image/*">
-            <div id="imagePreview" style="margin-top: 10px;">
-                <!-- The uploaded image will be shown here -->
+           
+        </div>
+        
+        <div id="detecting">
+            <h2>Detecting...</h2>
+            <div id="imagePreview">
+
             </div>
         </div>
+        
+        <div class="buttons">
+                <button id="stopBtnImg" class="stop-btn" style="display: none;">Stop</button>
+                <button id="changeImageBtn" style="display: none;">Change Image</button>
+            </div>
+        </div>
+
+        
     </main>
 
     <!-- Section for webcam page after clicking the camera button -->
@@ -62,10 +75,6 @@
         </div>
     </section>
 
-
-    
-    
-    
     <!-- Linking to external JavaScript file -->
     <script src="script.js"></script>
 </body>
