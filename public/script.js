@@ -2,17 +2,24 @@
 document.getElementById('cameraBtn').addEventListener('click', function() {
     // Hide the main page and show the webcam section
     document.querySelector('main').style.display = 'none';
-    document.getElementById('webcam-section').style.display = 'block';
+    const webcamSection = document.getElementById('webcam-section');
+    
+    if (webcamSection) {
+        webcamSection.style.display = 'block';
 
-    // Start webcam
-    const video = document.getElementById('video');
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(function(stream) {
-            video.srcObject = stream;
-        })
-        .catch(function(err) {
-            console.log("Error accessing webcam: " + err);
-        });
+        // Start webcam
+        const video = document.getElementById('video');
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                video.srcObject = stream;
+            })
+            .catch(function(err) {
+                console.log("Error accessing webcam: " + err);
+                alert("Error accessing webcam. Please check your camera permissions.");
+            });
+    } else {
+        console.error("Webcam section not found in the document.");
+    }
 });
 
 // Handle Save button click for webcam
@@ -28,7 +35,15 @@ document.getElementById('saveBtn').addEventListener('click', function() {
     const imageUrl = canvas.toDataURL('image/png');
     console.log("Captured Image:", imageUrl);
 
-    // Optional: You can add functionality to save the image to the user's device or server here.
+    // Optional: You can add functionality to save the image to the user's device 
+    const link = document.createElement('a');
+    link.href = imageUrl;
+    link.setAttribute('download', 'captured_image.png');
+    link.style.display = 'none';
+    document.body.appendChild(link);
+
+    link.click();
+    document.body.removeChild(link);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -80,3 +95,6 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
         reader.readAsDataURL(file);
     }
 });
+
+//
+
