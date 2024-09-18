@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const detectingText = document.getElementById('detecting'); // Get the "Detecting..." element
 
     if (uploadImageBtn && fileInput) {
+        document.getElementById('detecting').style.display = 'none';
         uploadImageBtn.addEventListener('click', function() {
-            document.getElementById('detecting').style.display = 'none';
             document.getElementById('uploadSection').style.display = 'block';
         });
 
