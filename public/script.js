@@ -72,7 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
    if (stopBtn) {
         stopBtn.addEventListener('click', () => {
             alert('Detection Stopped');
-            location.reload();  // Reloads the current page
+            location.reload();
+            location.href = "result.html"  // Reloads the current page
         });
     }
 
